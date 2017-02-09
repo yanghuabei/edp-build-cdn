@@ -1,0 +1,44 @@
+{
+    "name": "edp-build-cdn",
+    "description": "Processor for edp-build to add cdn support.",
+    "version": "0.1.0",
+    "main": "lib/index.js",
+    "author": {
+        "name": "yanghuabei",
+        "email": "yanghuabei@outlook.com",
+        "url": "https://github.com/yanghuabei"
+    },
+    "repository": "https://github.com/yanghuabei/edp-build-cdn",
+    "license": "MIT",
+    "scripts": {
+        "compile": "babel src --out-dir lib",
+        "coveralls": "cat ./coverage/lcov.info | coveralls",
+        "prepublish": "npm run compile",
+        "test": "babel-node ./node_modules/.bin/isparta cover _mocha",
+        "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    },
+    "devDependencies": {
+        "babel-cli": "6.22.x",
+        "babel-plugin-transform-class-properties": "^6.22.0",
+        "babel-preset-es2015": "6.22.x",
+        "babel-preset-es2016": "6.22.x",
+        "babel-preset-es2017": "6.22.x",
+        "chai": "3.5.x",
+        "cheerio": "^0.22.0",
+        "coveralls": "2.11.x",
+        "cz-conventional-changelog": "^1.2.0",
+        "isparta": "4.0.x",
+        "mocha": "3.2.x",
+        "semantic-release": "^6.3.2",
+        "sinon": "1.17.x"
+    },
+    "dependencies": {
+        "edp-build": "^1.2.3",
+        "edp-core": "^1.0.32"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    }
+}
